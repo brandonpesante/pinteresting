@@ -9,7 +9,19 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'sdoc', '~> 0.4.0',         
 
+ group :doc do 
+	gem 'sdoc', '~> 0.4.0', require: false
+end
+
+group :production do 
+	gem 'pg'
+	gem 'rails_12factor'
+end
+
+group :development, :test do 
+	gem 'sqlite3'
+end
 
 gem 'spring',        group: :development
