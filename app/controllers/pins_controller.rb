@@ -32,7 +32,6 @@ class PinsController < ApplicationController
   def update
     if @pin.update(pin_params)
       redirect_to @pin, notice: 'Pin was successfully updated.' 
-       
     else
       render action: "edit" 
     end
@@ -57,6 +56,6 @@ class PinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:description, :imgae)
+      params.require(:pin).permit(:description, :image)
     end
 end
